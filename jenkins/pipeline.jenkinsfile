@@ -23,7 +23,7 @@ pipeline {
         }
         stage('stage 2: when stage 1 is successfull') {
             steps {
-            build job : 'windows-batch-call-archive-manual-2nd-stage'
+            build job : 'keid-windows-batch-call-archive-manual-2nd-stage'
             }
         }
     }
