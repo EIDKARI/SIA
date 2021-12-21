@@ -1,6 +1,8 @@
 echo "jenkins node is connected"
-rem remove old artifacts from the node
-rm jenkins_file.txt
+cd %CD%
+mkdir genfile
+%gen_file%=%CD%\genfile
+cd %gen_file%
 rem create a new jenkins artifact
 copy nul > jenkins_file.txt
 echo This file has been created by jenkins! > jenkins_file.txt
