@@ -2,7 +2,7 @@
 import os
 import xml.etree.ElementTree as ET
 import sys
-
+import shutil
 
 tree = ET.parse('output.xml')
 #root = tree.getroot()
@@ -42,3 +42,6 @@ print ("++++++++++++++++",test1)
 sys.stdout = open("test.txt", "w")
 print(test1)
 sys.stdout.close()
+
+shutil.move("test.txt","genfile\\test.txt" )
+print ("moved results into genfile")
