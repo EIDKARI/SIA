@@ -39,6 +39,7 @@ test1 = os.getenv('success_factor')
 print ("++++++++++++++++",test1)
 
 
-sys.stdout = open("test.txt", "w")
-print(test1)
-sys.stdout.close()
+file = open("test.txt", "w")
+file.write(test1)
+file.close()
+#shutil.move("genfile\\test.txt","test.txt")
