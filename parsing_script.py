@@ -42,6 +42,3 @@ print ("++++++++++++++++",test1)
 sys.stdout = open("test.txt", "w")
 print(test1)
 sys.stdout.close()
-
-shutil.move("test.txt","genfile\\test.txt" )
-print ("moved results into genfile")
