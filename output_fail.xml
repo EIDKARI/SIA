@@ -1,0 +1,724 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<testmodule starttime="2020-05-04 13:32:19" timestamp="   0.290797" verdicts="2_basic">
+  <testgroup>
+    <testgroup>
+      <testcase starttime="2020-05-04 13:32:21" timestamp="   1.847797">
+        <teststep timestamp="   1.847797" level="0" type="user" ident="Preparation" result="na">Create logfile and start logging.</teststep>
+        <teststep timestamp="   1.947797" level="0" type="user" ident="Preparation" result="na">Power up DUT: Enabling clamp 30.</teststep>
+        <teststep timestamp="   2.689301" level="0" type="user" ident="Measurement" result="na">Ethernet link on Eth1 is up with 100 Mbit/s.</teststep>
+        <teststep timestamp="   3.149797" level="0" type="user" ident="Preparation" result="na">Wait for max. 80 s until DUT is in powerdown (current &lt; 300 mA).</teststep>
+        <teststep timestamp="  18.799797" level="0" type="user" ident="Measurement" result="na">Active current (273.6 mA) is below or equal to 300 mA. (Accuracy 2 percent of measurement value, at least 500 µA.)</teststep>
+        <teststep timestamp="  18.799797" level="0" type="user" ident="Preparation" result="na">Okay, DUT is in powerdown since timestamp 18.400797 s. Start test.</teststep>
+        <teststep timestamp="  18.799797" level="0" type="user" ident="Action" result="na">Tester generates wake-up pulse (amplitude: 12.0 V; width: 500 ms) on wake-up line to wake up DUT.</teststep>
+        <teststep timestamp="  18.800797" level="0" type="user" ident="Check" result="na">Does DUT communicate? Wait for any Ethernet packet for max. 5000 ms.</teststep>
+        <teststep timestamp="  18.874406" level="0" type="user" ident="Result" result="na">Okay, DUT communicates at timestamp 18.874406 s.</teststep>
+        <teststep timestamp="  18.874406" level="0" type="user" ident="Action" result="na">Start sending simulated NM PDU &quot;NM_Dummy_ST3&quot; to keep DUT awake.</teststep>
+        <teststep timestamp="  19.404330" level="0" type="user" ident="Result" result="na">DoIP connection has been established.</teststep>
+        <teststep timestamp="  19.404330" level="0" type="user" ident="Action" result="na">Get ZenZefi version.</teststep>
+        <teststep timestamp="  20.604330" level="0" type="user" ident="Result" result="na">ZenZefi Server-Version: 1.52.0.0, API-Version: 3.0</teststep>
+        <teststep timestamp="  21.104330" level="0" type="user" ident="Action" result="na">Send diagnostic request: &quot;Backend CA Certificate Identification [22 01 82]&quot;.</teststep>
+        <teststep timestamp="  21.104330" level="0" type="user" ident="Check" result="na">Does DUT send a diagnostic response? Wait for max. 60 s.</teststep>
+        <teststep timestamp="  21.119153" level="0" type="user" ident="Result" result="na">Diagnostic message positive acknowledge received. Wait for diagnostic message with the requested data.</teststep>
+        <teststep timestamp="  21.139158" level="0" type="user" ident="Result" result="na">Positive response [62 01 82] received.</teststep>
+        <teststep timestamp="  21.139158" level="0" type="user" ident="Result" result="na">DUT sent Backend CA Certificate ID: 80-DD-45-58-CC-84-CC-0A-C1-64-D5-18-EC-A6-45-06-5B-96-14-36</teststep>
+        <teststep timestamp="  21.189158" level="0" type="user" ident="Result" result="na">The following &apos;DIAGNOSTIC_AUTHENTICATION_CERTIFICATE&apos; was selected by ZenZefi using TargetECU &quot;&quot;:\nAuthorityKeyId: 80-DD-45-58-CC-84-CC-0A-C1-64-D5-18-EC-A6-45-06-5B-96-14-36\nSerialNo: 02-C4-98-48-66-59-00-00-02\nIssuer: &quot;CN=AB00001&quot;\nSubject: &quot;CN=MALUTZ&quot;\nTargetECU: &quot;&quot;\nUserRole: 2 (&quot;Development ENHANCED&quot;)</teststep>
+        <teststep timestamp="  21.239158" level="0" type="user" ident="Information" result="na">Validation of the diagnostic certificate by the ECU (sending the certificate to the ECU).</teststep>
+        <teststep timestamp="  21.739158" level="0" type="user" ident="Action" result="na">Send diagnostic request: &quot;Authenticate Diagnostic User or Tester [31 01 02 60]&quot;.</teststep>
+        <teststep timestamp="  21.739158" level="0" type="user" ident="Check" result="na">Does DUT send a diagnostic response? Wait for max. 60 s.</teststep>
+        <teststep timestamp="  21.753849" level="0" type="user" ident="Result" result="na">Diagnostic message positive acknowledge received. Wait for diagnostic message with the requested data.</teststep>
+        <teststep timestamp="  21.769122" level="0" type="user" ident="Result" result="na">Response received: &quot;Request Correctly Received - Response Pending&quot; [7F 31 78].</teststep>
+        <teststep timestamp="  22.589227" level="0" type="user" ident="Result" result="na">Positive response [71 01 02 60] received.</teststep>
+        <teststep timestamp="  22.589227" level="0" type="user" ident="Result" result="na">Validation Result: 0x00 Certificate verified. Certificate ownership verification necessary.\nECU sends the following challenge: 70-4D-DB-45-82-8B-21-51-27-9B-A1-87-F3-06-D9-5A-68-48-4A-AC-FA-A1-92-E9-42-29-59-3D-FB-8C-88-40</teststep>
+        <teststep timestamp="  22.589227" level="0" type="user" ident="Action" result="na">Signing the challenge in order to proof the ownership of the certificate.</teststep>
+        <teststep timestamp="  22.639227" level="0" type="user" ident="Result" result="na">Computed proof of ownership: \nAA-65-54-62-16-6B-A5-40-94-BF-C7-90-A5-E4-44-2D-61-A2-50-92-EE-F5-18-05-2B-D6-0B-6B-36-86-C5-34-3C-67-EF-F2-FA-09-D1-2F-B5-CF-B3-DD-4E-55-19-E6-92-3B-3D-37-06-76-11-F1-4F-2E-2C-9A-35-86-DA-03</teststep>
+        <teststep timestamp="  22.639227" level="0" type="user" ident="Information" result="na">Returning the proof of certificate ownership to the ECU.</teststep>
+        <teststep timestamp="  23.139227" level="0" type="user" ident="Action" result="na">Send diagnostic request: &quot;Authenticate Diagnostic User or Tester [31 01 02 60]&quot;.</teststep>
+        <teststep timestamp="  23.139227" level="0" type="user" ident="Check" result="na">Does DUT send a diagnostic response? Wait for max. 60 s.</teststep>
+        <teststep timestamp="  23.153585" level="0" type="user" ident="Result" result="na">Diagnostic message positive acknowledge received. Wait for diagnostic message with the requested data.</teststep>
+        <teststep timestamp="  23.168828" level="0" type="user" ident="Result" result="pass">Response received: &quot;Request Correctly Received - Response Pending&quot; [7F 31 78].</teststep>
+        <teststep timestamp="  23.978606" level="0" type="user" ident="Result" result="pass">Positive response [71 01 02 60] received.</teststep>
+        <teststep timestamp="  23.978606" level="0" type="user" ident="Result" result="na">Validation Result: 0x01 Ownership verified, authentication complete.</teststep>
+        <teststep timestamp="  24.028606" level="0" type="user" ident="Action" result="na">Send diagnostic request: &quot;HW Part Number [22 F1 11]&quot;.</teststep>
+        <teststep timestamp="  24.028606" level="0" type="user" ident="Check" result="na">Does DUT send a diagnostic response? Wait for max. 60 s.</teststep>
+        <teststep timestamp="  24.043488" level="0" type="user" ident="Result" result="na">Diagnostic message positive acknowledge received. Wait for diagnostic message with the requested data.</teststep>
+        <teststep timestamp="  24.058582" level="0" type="user" ident="Result" result="na">Positive response [62 F1 11] received.</teststep>
+        <teststep timestamp="  24.058582" level="0" type="user" ident="Result" result="na">Decoded HW Part Number:\nA 223 901 59 06.</teststep>
+        <teststep timestamp="  24.172582" level="0" type="user" ident="Action" result="na">Start local de-authentication</teststep>
+        <teststep timestamp="  24.672582" level="0" type="user" ident="Action" result="pass">Send diagnostic request: &quot;Authenticate Diagnostic User or Tester [31 01 02 60]&quot;.</teststep>
+        <teststep timestamp="  24.672582" level="0" type="user" ident="Check" result="pass">Does DUT send a diagnostic response? Wait for max. 60 s.</teststep>
+        <teststep timestamp="  24.683352" level="0" type="user" ident="Result" result="pass">Diagnostic message positive acknowledge received. Wait for diagnostic message with the requested data.</teststep>
+        <teststep timestamp="  24.698488" level="0" type="user" ident="Result" result="na">Response received: &quot;Request Correctly Received - Response Pending&quot; [7F 31 78].</teststep>
+        <teststep timestamp="  24.708522" level="0" type="user" ident="Result" result="pass">Positive response [71 01 02 60] received.</teststep>
+        <teststep timestamp="  24.708522" level="0" type="user" ident="Result" result="pass">Validation Result: 0x02 De-authentication successful.</teststep>
+        <teststep timestamp="  24.709522" level="0" type="user" ident="Action" result="na">Power down DUT: Disabling clamp 30.</teststep>
+        <teststep timestamp="  24.848522" level="0" type="user" ident="Action" result="na">Stop logging and close logfile.</teststep>
+        <verdict time="2020-05-04 13:32:44" timestamp="  24.898522" endtime="2020-05-04 13:32:44" endtimestamp="  24.898522" result="pass" />
+        <title>HW Part Number [22 F1 11]</title>
+        <miscinfo>
+          <title>Test specification reference</title>
+          <info>
+            <name></name>
+            <description>MSS 20228 &quot;Ethernet Networking Test Suite Specification&quot; [MSS20228-24]</description>
+          </info>
+        </miscinfo>
+        <miscinfo>
+          <title>Used test parameters</title>
+          <info>
+            <name>Voltage</name>
+            <description>13.83 V</description>
+          </info>
+          <info>
+            <name>Diagnostic Channel</name>
+            <description>MAIN (Ethernet)</description>
+          </info>
+          <info>
+            <name>DoIP Logical Tester Address</name>
+            <description>0x0EF8</description>
+          </info>
+          <info>
+            <name>DoIP Logical ECU Address</name>
+            <description>0x110A</description>
+          </info>
+        </miscinfo>
+      </testcase>
+      <testcase starttime="2020-05-04 13:32:46" timestamp="  26.898522">
+        <teststep timestamp="  26.898522" level="0" type="user" ident="Preparation" result="na">Create logfile and start logging.</teststep>
+        <teststep timestamp="  26.998522" level="0" type="user" ident="Preparation" result="na">Power up DUT: Enabling clamp 30.</teststep>
+        <teststep timestamp="  27.739692" level="0" type="user" ident="Measurement" result="na">Ethernet link on Eth1 is up with 100 Mbit/s.</teststep>
+        <teststep timestamp="  28.200522" level="0" type="user" ident="Preparation" result="na">Wait for max. 80 s until DUT is in powerdown (current &lt; 300 mA).</teststep>
+        <teststep timestamp="  43.851522" level="0" type="user" ident="Measurement" result="na">Active current (266.1 mA) is below or equal to 300 mA. (Accuracy 2 percent of measurement value, at least 500 µA.)</teststep>
+        <teststep timestamp="  43.851522" level="0" type="user" ident="Preparation" result="pass">Okay, DUT is in powerdown since timestamp 43.435522 s. Start test.</teststep>
+        <teststep timestamp="  43.851522" level="0" type="user" ident="Action" result="na">Tester generates wake-up pulse (amplitude: 12.0 V; width: 500 ms) on wake-up line to wake up DUT.</teststep>
+        <teststep timestamp="  43.852522" level="0" type="user" ident="Check" result="na">Does DUT communicate? Wait for any Ethernet packet for max. 5000 ms.</teststep>
+        <teststep timestamp="  43.950083" level="0" type="user" ident="Result" result="pass">Okay, DUT communicates at timestamp 43.950083 s.</teststep>
+        <teststep timestamp="  43.950083" level="0" type="user" ident="Action" result="na">Start sending simulated NM PDU &quot;NM_Dummy_ST3&quot; to keep DUT awake.</teststep>
+        <teststep timestamp="  44.484825" level="0" type="user" ident="Result" result="pass">DoIP connection has been established.</teststep>
+        <teststep timestamp="  44.484825" level="0" type="user" ident="Action" result="na">Get ZenZefi version.</teststep>
+        <teststep timestamp="  44.534825" level="0" type="user" ident="Result" result="pass">ZenZefi Server-Version: 1.52.0.0, API-Version: 3.0</teststep>
+        <teststep timestamp="  45.034825" level="0" type="user" ident="Action" result="na">Send diagnostic request: &quot;Backend CA Certificate Identification [22 01 82]&quot;.</teststep>
+        <teststep timestamp="  45.034825" level="0" type="user" ident="Check" result="na">Does DUT send a diagnostic response? Wait for max. 60 s.</teststep>
+        <teststep timestamp="  45.049858" level="0" type="user" ident="Result" result="pass">Diagnostic message positive acknowledge received. Wait for diagnostic message with the requested data.</teststep>
+        <teststep timestamp="  45.074718" level="0" type="user" ident="Result" result="pass">Positive response [62 01 82] received.</teststep>
+        <teststep timestamp="  45.074718" level="0" type="user" ident="Result" result="pass">DUT sent Backend CA Certificate ID: 80-DD-45-58-CC-84-CC-0A-C1-64-D5-18-EC-A6-45-06-5B-96-14-36</teststep>
+        <teststep timestamp="  45.074718" level="0" type="user" ident="Result" result="pass">The following &apos;DIAGNOSTIC_AUTHENTICATION_CERTIFICATE&apos; was selected by ZenZefi using TargetECU &quot;&quot;:\nAuthorityKeyId: 80-DD-45-58-CC-84-CC-0A-C1-64-D5-18-EC-A6-45-06-5B-96-14-36\nSerialNo: 02-C4-98-48-66-59-00-00-02\nIssuer: &quot;CN=AB00001&quot;\nSubject: &quot;CN=MALUTZ&quot;\nTargetECU: &quot;&quot;\nUserRole: 2 (&quot;Development ENHANCED&quot;)</teststep>
+        <teststep timestamp="  45.124718" level="0" type="user" ident="Information" result="na">Validation of the diagnostic certificate by the ECU (sending the certificate to the ECU).</teststep>
+        <teststep timestamp="  45.624718" level="0" type="user" ident="Action" result="na">Send diagnostic request: &quot;Authenticate Diagnostic User or Tester [31 01 02 60]&quot;.</teststep>
+        <teststep timestamp="  45.624718" level="0" type="user" ident="Check" result="na">Does DUT send a diagnostic response? Wait for max. 60 s.</teststep>
+        <teststep timestamp="  45.640062" level="0" type="user" ident="Result" result="pass">Diagnostic message positive acknowledge received. Wait for diagnostic message with the requested data.</teststep>
+        <teststep timestamp="  45.664602" level="0" type="user" ident="Result" result="na">Response received: &quot;Request Correctly Received - Response Pending&quot; [7F 31 78].</teststep>
+        <teststep timestamp="  46.464458" level="0" type="user" ident="Result" result="pass">Positive response [71 01 02 60] received.</teststep>
+        <teststep timestamp="  46.464458" level="0" type="user" ident="Result" result="pass">Validation Result: 0x00 Certificate verified. Certificate ownership verification necessary.\nECU sends the following challenge: 70-4D-DB-45-82-8B-21-51-27-9B-A1-87-F3-06-D9-5A-68-48-4A-AC-FA-A1-92-E9-42-29-59-3D-FB-8C-88-40</teststep>
+        <teststep timestamp="  46.464458" level="0" type="user" ident="Action" result="na">Signing the challenge in order to proof the ownership of the certificate.</teststep>
+        <teststep timestamp="  46.514458" level="0" type="user" ident="Result" result="pass">Computed proof of ownership: \nAA-65-54-62-16-6B-A5-40-94-BF-C7-90-A5-E4-44-2D-61-A2-50-92-EE-F5-18-05-2B-D6-0B-6B-36-86-C5-34-3C-67-EF-F2-FA-09-D1-2F-B5-CF-B3-DD-4E-55-19-E6-92-3B-3D-37-06-76-11-F1-4F-2E-2C-9A-35-86-DA-03</teststep>
+        <teststep timestamp="  46.514458" level="0" type="user" ident="Information" result="na">Returning the proof of certificate ownership to the ECU.</teststep>
+        <teststep timestamp="  47.014458" level="0" type="user" ident="Action" result="na">Send diagnostic request: &quot;Authenticate Diagnostic User or Tester [31 01 02 60]&quot;.</teststep>
+        <teststep timestamp="  47.014458" level="0" type="user" ident="Check" result="na">Does DUT send a diagnostic response? Wait for max. 60 s.</teststep>
+        <teststep timestamp="  47.029479" level="0" type="user" ident="Result" result="pass">Diagnostic message positive acknowledge received. Wait for diagnostic message with the requested data.</teststep>
+        <teststep timestamp="  47.054358" level="0" type="user" ident="Result" result="na">Response received: &quot;Request Correctly Received - Response Pending&quot; [7F 31 78].</teststep>
+        <teststep timestamp="  47.844160" level="0" type="user" ident="Result" result="pass">Positive response [71 01 02 60] received.</teststep>
+        <teststep timestamp="  47.844160" level="0" type="user" ident="Result" result="pass">Validation Result: 0x01 Ownership verified, authentication complete.</teststep>
+        <teststep timestamp="  47.894160" level="0" type="user" ident="Action" result="na">Send diagnostic request: &quot;HW Version Information [22 F1 50]&quot;.</teststep>
+        <teststep timestamp="  47.894160" level="0" type="user" ident="Check" result="na">Does DUT send a diagnostic response? Wait for max. 60 s.</teststep>
+        <teststep timestamp="  47.909313" level="0" type="user" ident="Result" result="pass">Diagnostic message positive acknowledge received. Wait for diagnostic message with the requested data.</teststep>
+        <teststep timestamp="  47.934196" level="0" type="user" ident="Result" result="pass">Positive response [62 F1 50] received.</teststep>
+        <teststep timestamp="  47.934196" level="0" type="user" ident="Result" result="na">Decoded HW Version Information:\nHW 19/04.02.</teststep>
+        <teststep timestamp="  48.057196" level="0" type="user" ident="Action" result="na">Start local de-authentication</teststep>
+        <teststep timestamp="  48.557196" level="0" type="user" ident="Action" result="na">Send diagnostic request: &quot;Authenticate Diagnostic User or Tester [31 01 02 60]&quot;.</teststep>
+        <teststep timestamp="  48.557196" level="0" type="user" ident="Check" result="na">Does DUT send a diagnostic response? Wait for max. 60 s.</teststep>
+        <teststep timestamp="  48.569202" level="0" type="user" ident="Result" result="pass">Diagnostic message positive acknowledge received. Wait for diagnostic message with the requested data.</teststep>
+        <teststep timestamp="  48.594099" level="0" type="user" ident="Result" result="na">Response received: &quot;Request Correctly Received - Response Pending&quot; [7F 31 78].</teststep>
+        <teststep timestamp="  48.604028" level="0" type="user" ident="Result" result="pass">Positive response [71 01 02 60] received.</teststep>
+        <teststep timestamp="  48.604028" level="0" type="user" ident="Result" result="pass">Validation Result: 0x02 De-authentication successful.</teststep>
+        <teststep timestamp="  48.605028" level="0" type="user" ident="Action" result="na">Power down DUT: Disabling clamp 30.</teststep>
+        <teststep timestamp="  48.744028" level="0" type="user" ident="Action" result="na">Stop logging and close logfile.</teststep>
+        <verdict time="2020-05-04 13:33:08" timestamp="  48.794028" endtime="2020-05-04 13:33:08" endtimestamp="  48.794028" result="pass" />
+        <title>HW Version Information [22 F1 50]</title>
+        <miscinfo>
+          <title>Test specification reference</title>
+          <info>
+            <name></name>
+            <description>MSS 20228 &quot;Ethernet Networking Test Suite Specification&quot; [MSS20228-27]</description>
+          </info>
+        </miscinfo>
+        <miscinfo>
+          <title>Used test parameters</title>
+          <info>
+            <name>Voltage</name>
+            <description>13.83 V</description>
+          </info>
+          <info>
+            <name>Diagnostic Channel</name>
+            <description>MAIN (Ethernet)</description>
+          </info>
+          <info>
+            <name>DoIP Logical Tester Address</name>
+            <description>0x0EF8</description>
+          </info>
+          <info>
+            <name>DoIP Logical ECU Address</name>
+            <description>0x110A</description>
+          </info>
+        </miscinfo>
+      </testcase>
+      <testcase starttime="2020-05-04 13:33:10" timestamp="  50.794028">
+        <teststep timestamp="  50.794028" level="0" type="user" ident="Preparation" result="na">Create logfile and start logging.</teststep>
+        <teststep timestamp="  50.894028" level="0" type="user" ident="Preparation" result="na">Power up DUT: Enabling clamp 30.</teststep>
+        <teststep timestamp="  51.635114" level="0" type="user" ident="Measurement" result="na">Ethernet link on Eth1 is up with 100 Mbit/s.</teststep>
+        <teststep timestamp="  52.096028" level="0" type="user" ident="Preparation" result="na">Wait for max. 80 s until DUT is in powerdown (current &lt; 300 mA).</teststep>
+        <!-- Measurement stop forced. Test is incomplete! -->
+        <verdict time="2020-05-04 13:33:12" timestamp="  53.461547" endtime="2020-05-04 13:33:13" endtimestamp="  53.461547" result="fail" />
+        <title>HW Supplier Identification [22 F1 54]</title>
+        <miscinfo>
+          <title>Test specification reference</title>
+          <info>
+            <name></name>
+            <description>MSS 20228 &quot;Ethernet Networking Test Suite Specification&quot; [MSS20228-30]</description>
+          </info>
+        </miscinfo>
+        <miscinfo>
+          <title>Not executed testcases</title>
+          <info>
+            <name></name>
+            <description>SW Part Numbers [22 F1 21]</description>
+          </info>
+          <info>
+            <name></name>
+            <description>SW Version Information [22 F1 51]</description>
+          </info>
+          <info>
+            <name></name>
+            <description>SW Supplier Identification [22 F1 55]</description>
+          </info>
+          <info>
+            <name></name>
+            <description>ECU Extract Version [22 EF 00]</description>
+          </info>
+          <info>
+            <name></name>
+            <description>Active Diagnostic Information [22 F1 00]</description>
+          </info>
+          <info>
+            <name></name>
+            <description>No Ethernet error packets during ECU Hard Reset [11 01]</description>
+          </info>
+          <info>
+            <name></name>
+            <description>Don&apos;t wake up on power on</description>
+          </info>
+          <info>
+            <name></name>
+            <description>Maximum duration and amplitude too low</description>
+          </info>
+          <info>
+            <name></name>
+            <description>Typical duration and minimum amplitude</description>
+          </info>
+          <info>
+            <name></name>
+            <description>Typical duration and typical amplitude</description>
+          </info>
+          <info>
+            <name></name>
+            <description>Typical duration and maximum amplitude</description>
+          </info>
+          <info>
+            <name></name>
+            <description>Check link stability</description>
+          </info>
+          <info>
+            <name></name>
+            <description>Check TEthernetNetworkStartup</description>
+          </info>
+          <info>
+            <name></name>
+            <description>Check if SD communication starts before link is established</description>
+          </info>
+          <info>
+            <name></name>
+            <description>Check Source MAC Address</description>
+          </info>
+          <info>
+            <name></name>
+            <description>Check Source IP Address</description>
+          </info>
+          <info>
+            <name></name>
+            <description>Check VLAN ID</description>
+          </info>
+          <info>
+            <name></name>
+            <description>Check for not allowed protocols</description>
+          </info>
+          <info>
+            <name></name>
+            <description>No Ethernet error packets during normal communication</description>
+          </info>
+          <info>
+            <name></name>
+            <description>Check transmission of NM PDU</description>
+          </info>
+          <info>
+            <name></name>
+            <description>Check Control Bit Vector</description>
+          </info>
+          <info>
+            <name></name>
+            <description>Check UDPNM_MSG_CYCLE_TIME</description>
+          </info>
+          <info>
+            <name></name>
+            <description>Check UDPNM_REPEAT_MESSAGE_TIME</description>
+          </info>
+          <info>
+            <name></name>
+            <description>Check UDPNM_TIMEOUT_TIME</description>
+          </info>
+          <info>
+            <name></name>
+            <description>Check restarting UDPNM_TIMEOUT_TIME</description>
+          </info>
+          <info>
+            <name></name>
+            <description>Stay awake because of NM PDU of tester</description>
+          </info>
+          <info>
+            <name></name>
+            <description>Check Socket for not allowed PDUs</description>
+          </info>
+          <info>
+            <name></name>
+            <description>Check Socket-PDU-Collection-Max-Buffer-Size</description>
+          </info>
+          <info>
+            <name></name>
+            <description>Check for empty UDP packet</description>
+          </info>
+          <info>
+            <name></name>
+            <description>Check unused frame space</description>
+          </info>
+          <info>
+            <name></name>
+            <description>Check unused PDU space</description>
+          </info>
+          <info>
+            <name></name>
+            <description>Check frame length</description>
+          </info>
+          <info>
+            <name></name>
+            <description>Check PDU length</description>
+          </info>
+          <info>
+            <name></name>
+            <description>Check PDU cycle time</description>
+          </info>
+          <info>
+            <name></name>
+            <description>Check for unknown PDUs</description>
+          </info>
+          <info>
+            <name></name>
+            <description>Check for not allowed PDUs</description>
+          </info>
+          <info>
+            <name></name>
+            <description>Check for not sent PDUs</description>
+          </info>
+          <info>
+            <name></name>
+            <description>Check initial PNC behavior after wakeup</description>
+          </info>
+          <info>
+            <name></name>
+            <description>Check fundamental PNC behavior</description>
+          </info>
+          <info>
+            <name></name>
+            <description>Check evaluation of Partial Network Information Bit</description>
+          </info>
+          <info>
+            <name></name>
+            <description>Check PNC bits</description>
+          </info>
+          <info>
+            <name></name>
+            <description>Check mirroring of PNC bits</description>
+          </info>
+          <info>
+            <name></name>
+            <description>Check assigned partial networks</description>
+          </info>
+          <info>
+            <name></name>
+            <description>Check not-assigned partial networks</description>
+          </info>
+          <info>
+            <name></name>
+            <description>Check PDU transmission time</description>
+          </info>
+          <info>
+            <name></name>
+            <description>Stay awake because of NM PDU without a partial network request</description>
+          </info>
+          <info>
+            <name></name>
+            <description>Check &apos;ECU ID&apos;</description>
+          </info>
+          <info>
+            <name></name>
+            <description>Check &apos;Network ID&apos;</description>
+          </info>
+          <info>
+            <name></name>
+            <description>Check wakeup reason</description>
+          </info>
+          <info>
+            <name></name>
+            <description>Check stay awake reason &apos;Awake_NwStart&apos;</description>
+          </info>
+          <info>
+            <name></name>
+            <description>Check stay awake reason &apos;Awake_Ignition_On&apos;</description>
+          </info>
+          <info>
+            <name></name>
+            <description>Check stay awake reason &apos;Awake_Diag_Actv&apos;</description>
+          </info>
+          <info>
+            <name></name>
+            <description>Check CRC [AUTOSAR Profile 2]</description>
+          </info>
+          <info>
+            <name></name>
+            <description>Check Counter [AUTOSAR Profile 2]</description>
+          </info>
+          <info>
+            <name></name>
+            <description>Check CRC [AUTOSAR Profile 5]</description>
+          </info>
+          <info>
+            <name></name>
+            <description>Check Counter [AUTOSAR Profile 5]</description>
+          </info>
+          <info>
+            <name></name>
+            <description>Check CRC [AUTOSAR Profile 6]</description>
+          </info>
+          <info>
+            <name></name>
+            <description>Check Counter [AUTOSAR Profile 6]</description>
+          </info>
+          <info>
+            <name></name>
+            <description>Check Length [AUTOSAR Profile 6]</description>
+          </info>
+          <info>
+            <name></name>
+            <description>Check CRC [AUTOSAR Profile 7]</description>
+          </info>
+          <info>
+            <name></name>
+            <description>Check Counter [AUTOSAR Profile 7]</description>
+          </info>
+          <info>
+            <name></name>
+            <description>Check Length [AUTOSAR Profile 7]</description>
+          </info>
+          <info>
+            <name></name>
+            <description>Check DataID [AUTOSAR Profile 7]</description>
+          </info>
+          <info>
+            <name></name>
+            <description>Check timing of ARP requests</description>
+          </info>
+          <info>
+            <name></name>
+            <description>Check ARP cache timeout</description>
+          </info>
+          <info>
+            <name></name>
+            <description>Check ARP reply address</description>
+          </info>
+          <info>
+            <name></name>
+            <description>Check TArpResponseMax</description>
+          </info>
+          <info>
+            <name></name>
+            <description>Check for offering all services - multicast</description>
+          </info>
+          <info>
+            <name></name>
+            <description>Check for offering all services - unicast</description>
+          </info>
+          <info>
+            <name></name>
+            <description>Check for searching all services</description>
+          </info>
+          <info>
+            <name></name>
+            <description>Check if searching is stopped after reception of an offer - multicast</description>
+          </info>
+          <info>
+            <name></name>
+            <description>Check if searching is stopped after reception of an offer - unicast</description>
+          </info>
+          <info>
+            <name></name>
+            <description>Check for unknown services</description>
+          </info>
+          <info>
+            <name></name>
+            <description>Check if all available eventgroups can be subscribed</description>
+          </info>
+          <info>
+            <name></name>
+            <description>Check for multicast endpoint in Subscribe Eventgroup Acknowledgment</description>
+          </info>
+          <info>
+            <name></name>
+            <description>Check if all simulated eventgroups are subscribed - multicast</description>
+          </info>
+          <info>
+            <name></name>
+            <description>Check if all simulated eventgroups are subscribed - unicast</description>
+          </info>
+          <info>
+            <name></name>
+            <description>Check T_SD_OfferService_Cycle_Time</description>
+          </info>
+          <info>
+            <name></name>
+            <description>Check T_SD_FindService_Cycle_Time</description>
+          </info>
+          <info>
+            <name></name>
+            <description>Check initial offer delay</description>
+          </info>
+          <info>
+            <name></name>
+            <description>Check initial find delay</description>
+          </info>
+          <info>
+            <name></name>
+            <description>Time until powerdown</description>
+          </info>
+        </miscinfo>
+        <extendedinfo type="html"><![CDATA[<b>Measurement stop forced. Test is incomplete!</b>]]></extendedinfo>
+      </testcase>
+      <title>ECU Identification</title>
+    </testgroup>
+    <title>Diagnostics [DG]</title>
+  </testgroup>
+  <verdict time="2020-05-04 13:33:12" timestamp="  53.461547" endtime="2020-05-04 13:33:13" endtimestamp="  53.461547" result="fail" />
+  <title>Daimler Ethernet Test - Star3</title>
+  <testlogfiles>
+    <testlogfile file="..\..\..\..\..\..\Users\malutz\AppData\Local\NTSTestData\logfile\logfile_dummy.blf" logbegin="Active at test start" logend="   0.290797" />
+    <testlogfile file="traces\DG_ECU_Identification_HW_Part_Number_20200504_133221.blf" logbegin="   1.847797" logend="  24.898522" />
+    <testlogfile file="traces\DG_ECU_Identification_HW_Version_Information_20200504_133246.blf" logbegin="  26.898522" logend="  48.794028" />
+    <testlogfile file="traces\DG_ECU_Identification_HW_Supplier_Identification_20200504_133310.blf" logbegin="  50.794028" logend="  53.461547" />
+  </testlogfiles>
+  <testsetup>
+    <xinfo>
+      <name>Version</name>
+      <description>CANoe.Ethernet 11.0.96 (SP4)</description>
+    </xinfo>
+    <xinfo>
+      <name>Configuration</name>
+      <description>C:\Users\malutz\AppData\Local\NTSTestData\Daimler_Ethernet_Test_Star3.cfg</description>
+    </xinfo>
+    <xinfo>
+      <name>Database MAIN on Ethernet</name>
+      <description>C:\Users\malutz\AppData\Local\NTSTestData\databases\BC_F_STAR_3_2020_d_Ecu_Details_Extract_2019_05f2_!_AR43.arxml (2019-08-23 14:17:12)</description>
+    </xinfo>
+    <xinfo>
+      <name>Diagnostic Description of BasicDiagnosticsEcu</name>
+      <description>Basic Diagnostic Description</description>
+    </xinfo>
+    <xinfo>
+      <name>Test Module Name</name>
+      <description>Test</description>
+    </xinfo>
+    <xinfo>
+      <name>Test Module File</name>
+      <description>C:\Users\malutz\AppData\Local\NTSTestData\capl\ethernet\MainTest_ethernet_star3.cbf</description>
+    </xinfo>
+    <xinfo>
+      <name>Last modification of Test Module File</name>
+      <description>2020-05-04, 13:32:17</description>
+    </xinfo>
+    <xinfo>
+      <name>Nodelayer Module AsrPDUIL2</name>
+      <description>CANoe AutoSAR PDU Interaction Layer NL (General OEM) Version 2.85.28 (Sep 14 2018 10:33:24) , C:\Program Files\Vector CANoe 11.0\Exec32\AsrPDUIL2.dll</description>
+    </xinfo>
+    <xinfo>
+      <name>Nodelayer Module SecMgrCANoeClient</name>
+      <description>Security Manager CANoe Node Layer Client (Version 2.1.6.0), C:\Program Files\Vector CANoe 11.0\Exec32\SecMgrCANoeClient.dll</description>
+    </xinfo>
+    <xinfo>
+      <name>Nodelayer Module Ethernet_IL</name>
+      <description>Ethernet Interaction Layer for CANoe, Version 11.0.96, C:\Program Files\Vector CANoe 11.0\Exec32\Ethernet_IL.dll</description>
+    </xinfo>
+    <xinfo>
+      <name>Nodelayer Module CANoeILNL_AUTOSAR_Eth</name>
+      <description>AUTOSAR Interaction Layer for CANoe, Version 11.0.96, C:\Program Files\Vector CANoe 11.0\Exec32\CANoeILNL_AUTOSAR_Eth.dll</description>
+    </xinfo>
+    <xinfo>
+      <name>Nodelayer Module J1939TestServiceLibraryNL</name>
+      <description>J1939 Test Service Library for CANoe, Version 11.0.96.0, C:\Program Files\Vector CANoe 11.0\Exec32\J1939TestServiceLibraryNL.dll</description>
+    </xinfo>
+    <xinfo>
+      <name>Nodelayer Module VHDevDLL</name>
+      <description>VHDevDLL (VC14, Version 2.8.1, C:\Program Files\Vector CANoe 11.0\Exec32\VHDevDLL.dll</description>
+    </xinfo>
+    <xinfo>
+      <name>Nodelayer Module ZenZefiNodeLayer</name>
+      <description>Security Manager ZenZefi Node Layer (Version 2.0.13.0), C:\ProgramData\Vector\Security Manager\DAG\ZenZefi_Nodelayer\ZenZefiNodeLayer.dll</description>
+    </xinfo>
+    <xinfo>
+      <name>Nodelayer Module DoIP</name>
+      <description>4.2.0000, </description>
+    </xinfo>
+    <info>
+      <name>Test Hardware VH1150</name>
+      <description>Hardware Revision 8, Firmware Version 1.5.</description>
+    </info>
+    <info>
+      <name>Transceiver Name - Test bus</name>
+      <description>On board ETH BCM89811/BCM54810.</description>
+    </info>
+    <info>
+      <name>Transceiver Name - Diagnostic bus</name>
+      <description>On board ETH BCM89811/BCM54810.</description>
+    </info>
+    <info>
+      <name>Transceiver Name - Wakeup bus</name>
+      <description>On board ETH BCM89811/BCM54810.</description>
+    </info>
+    <info>
+      <name>FTDI Driver Version</name>
+      <description>2.12.28.1</description>
+    </info>
+    <info>
+      <name>ZenZefi Server Version</name>
+      <description>1.52.0.0</description>
+    </info>
+    <info>
+      <name>Vector Security Package DAG Version</name>
+      <description>2.0.13.0</description>
+    </info>
+    <info>
+      <name>Vector Security Manager Version</name>
+      <description>2.1.6.0</description>
+    </info>
+    <info>
+      <name>License Information</name>
+      <description>Daimler AG, 100270</description>
+    </info>
+    <info>
+      <name>Additional License Information</name>
+      <description>Daimler Compliance Mode: Only Webshop distributions are allowed</description>
+    </info>
+    <info>
+      <name>AKKA - Networking Test Suite</name>
+      <description>4.11.2 </description>
+    </info>
+    <info>
+      <name>Commit-ID</name>
+      <description></description>
+    </info>
+  </testsetup>
+  <sut>
+    <info>
+      <name>ECU</name>
+      <description>BC_F</description>
+    </info>
+    <info>
+      <name>ECU Variant</name>
+      <description>BC_F</description>
+    </info>
+    <info>
+      <name>Vehicle Line</name>
+      <description>223</description>
+    </info>
+    <info>
+      <name>Release</name>
+      <description>E14.1_SW_19_37_02</description>
+    </info>
+    <info>
+      <name>Cluster</name>
+      <description>MAIN</description>
+    </info>
+    <info>
+      <name>Topology</name>
+      <description>Star3</description>
+    </info>
+    <info>
+      <name>Ethernet Bitrate</name>
+      <description>100 Mbit/s</description>
+    </info>
+    <info>
+      <name>Terminal Type</name>
+      <description>TERMINAL30_WITH_NM</description>
+    </info>
+    <info>
+      <name>Used ECU Extract Version for test</name>
+      <description>2019.05.52 (BC_F_STAR_3_2020_d_Ecu_Details_Extract_2019_05f2_!_AR43.arxml)</description>
+    </info>
+    <info>
+      <name>HW Part Number</name>
+      <description>A 223 901 59 06</description>
+    </info>
+    <info>
+      <name>HW Version Information</name>
+      <description>HW 19/04.02</description>
+    </info>
+    <info>
+      <name>HW Supplier Identification</name>
+      <description>n/a</description>
+    </info>
+    <info>
+      <name>SW Part Numbers</name>
+      <description>n/a</description>
+    </info>
+    <info>
+      <name>SW Version Information</name>
+      <description>n/a</description>
+    </info>
+    <info>
+      <name>SW Supplier Identification</name>
+      <description>n/a</description>
+    </info>
+    <info>
+      <name>Implemented ECU Extract Version</name>
+      <description>n/a</description>
+    </info>
+    <info>
+      <name>Active Diagnostic Information</name>
+      <description>n/a</description>
+    </info>
+  </sut>
+  <miscinfo>
+    <title>Disclaimer</title>
+    <info>
+      <name></name>
+      <description>The results of the networking tests were generated on a test system with partial simulation environment.</description>
+    </info>
+    <info>
+      <name></name>
+      <description>The test equipment used in the test system is not subject to test equipment monitoring as per procedural instruction V 059 00 12.</description>
+    </info>
+    <info>
+      <name></name>
+      <description>For this reason, the test results cannot be used as a basis for release decisions.</description>
+    </info>
+    <info>
+      <name></name>
+      <description>Responsibility pertaining to the use of test results lies with the ECU component department.</description>
+    </info>
+  </miscinfo>
+  <extendedinfo type="html"><![CDATA[<b>Measurement stop forced. Test is incomplete!</b>]]></extendedinfo>
+</testmodule>
+<!--footprint="c80c3430d4003bb3af428ae7811c6404" version="1"-->
