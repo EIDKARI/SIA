@@ -5,9 +5,4 @@ mkdir genfile
 cd %CD%\genfile
 rem create a new jenkins artifact
 copy nul > jenkins_file.txt
-echo This file has been created by jenkins! > jenkins_file.txt
-echo Test 1 --> SUCCESS > jenkins_file.txt
-echo Test 2 --> SUCCESS > jenkins_file.txt
-echo Test 3 --> SUCCESS > jenkins_file.txt
-echo Test 4 --> SUCCESS > jenkins_file.txt
-echo Test 5 --> FAIL > jenkins_file.txt
+echo Test 1 = SUCCESS \n Test 2 = SUCCESS \n Test 3 = SUCCESS \n Test 4 = SUCCESS \n Test 5 = FAIL  > jenkins_file.txt
