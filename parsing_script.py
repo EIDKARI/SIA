@@ -4,7 +4,7 @@ import xml.etree.ElementTree as ET
 import sys
 import shutil
 
-tree = ET.parse('output_fail.xml')
+tree = ET.parse('output.xml')
 #root = tree.getroot()
 search_pass = tree.findall(".//teststep/.[@result='pass']")
 length = len(search_pass)
