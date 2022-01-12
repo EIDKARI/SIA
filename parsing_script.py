@@ -27,8 +27,9 @@ print('randomly selected output item is:', item)
 
 ##################################################################################
 #parse the test xml report
+item_new ='out\\' + item
 try:
-    tree = ET.parse(item)
+    tree = ET.parse(item_new)
 except:
     print('Cannot open the file specified, or the file doesnot exist')
 #search for the pattern pass, and save all findings in a list
