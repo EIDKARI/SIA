@@ -3,10 +3,32 @@ import os
 import xml.etree.ElementTree as ET
 import sys
 import shutil
+import random
 
+try:
+    cwd = os.getcwd()
+except:
+    print('Cannot find current directory')
+
+#Test results directory:
+directory_new = cwd + '\\out'
+print ('new directory is: ',directory_new)
+
+#list the files in the test result directory
+try:
+    files = os.listdir(directory_new)
+except:
+    print('the directory is empty!')
+print('Files in the current directory are as follows: ',files)
+
+#Choose a file from the result directory in each run randomly
+item = random.choice(files)
+print('randomly selected output item is:', item)
+
+##################################################################################
 #parse the test xml report
 try:
-    tree = ET.parse('output.xml')
+    tree = ET.parse(item)
 except:
     print('Cannot open the file specified, or the file doesnot exist')
 #search for the pattern pass, and save all findings in a list
@@ -31,6 +53,8 @@ print ("length of the list of fail:\n")
 print (length_fail)
 print ("search fail list :\n")
 print (search_fail)
+
+#Get the success percentage
 percentage_success = (length/(length+length_fail))*100
 print ("Success percentage is: ", percentage_success, "%")
 
@@ -46,8 +70,8 @@ if percentage_success >= 60:
 else:
    os.environ['success_factor'] = "false" 
 
-test1 = os.getenv('success_factor')
-print ("Success factor is: ",test1)
+success_factor = os.getenv('success_factor')
+print ("Success factor is: ",success_factor)
 
 
 try:
@@ -55,7 +79,7 @@ try:
 except:
     print('Cannot open the file')
 try:    
-    file.write(test1)
+    file.write(success_factor)
 except:
     print('Cannot write to the file')
 try:
