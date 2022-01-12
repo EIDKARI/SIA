@@ -3,7 +3,7 @@
   <testgroup>
     <testgroup>
       <testcase starttime="2020-05-04 13:32:21" timestamp="   1.847797">
-        <teststep timestamp="   1.847797" level="0" type="user" ident="Preparation" result="pass">Create logfile and start logging.</teststep>
+        <teststep timestamp="   1.847797" level="0" type="user" ident="Preparation" result="na">Create logfile and start logging.</teststep>
         <teststep timestamp="   1.947797" level="0" type="user" ident="Preparation" result="pass">Power up DUT: Enabling clamp 30.</teststep>
         <teststep timestamp="   2.689301" level="0" type="user" ident="Measurement" result="pass">Ethernet link on Eth1 is up with 100 Mbit/s.</teststep>
         <teststep timestamp="   3.149797" level="0" type="user" ident="Preparation" result="pass">Wait for max. 80 s until DUT is in powerdown (current &lt; 300 mA).</teststep>
@@ -29,7 +29,7 @@
         <teststep timestamp="  21.769122" level="0" type="user" ident="Result" result="pass">Response received: &quot;Request Correctly Received - Response Pending&quot; [7F 31 78].</teststep>
         <teststep timestamp="  22.589227" level="0" type="user" ident="Result" result="pass">Positive response [71 01 02 60] received.</teststep>
         <teststep timestamp="  22.589227" level="0" type="user" ident="Result" result="pass">Validation Result: 0x00 Certificate verified. Certificate ownership verification necessary.\nECU sends the following challenge: 70-4D-DB-45-82-8B-21-51-27-9B-A1-87-F3-06-D9-5A-68-48-4A-AC-FA-A1-92-E9-42-29-59-3D-FB-8C-88-40</teststep>
-        <teststep timestamp="  22.589227" level="0" type="user" ident="Action" result="na">Signing the challenge in order to proof the ownership of the certificate.</teststep>
+        <teststep timestamp="  22.589227" level="0" type="user" ident="Action" result="pass">Signing the challenge in order to proof the ownership of the certificate.</teststep>
         <teststep timestamp="  22.639227" level="0" type="user" ident="Result" result="pass">Computed proof of ownership: \nAA-65-54-62-16-6B-A5-40-94-BF-C7-90-A5-E4-44-2D-61-A2-50-92-EE-F5-18-05-2B-D6-0B-6B-36-86-C5-34-3C-67-EF-F2-FA-09-D1-2F-B5-CF-B3-DD-4E-55-19-E6-92-3B-3D-37-06-76-11-F1-4F-2E-2C-9A-35-86-DA-03</teststep>
         <teststep timestamp="  22.639227" level="0" type="user" ident="Information" result="pass">Returning the proof of certificate ownership to the ECU.</teststep>
         <teststep timestamp="  23.139227" level="0" type="user" ident="Action" result="pass">Send diagnostic request: &quot;Authenticate Diagnostic User or Tester [31 01 02 60]&quot;.</teststep>
@@ -39,7 +39,7 @@
         <teststep timestamp="  23.978606" level="0" type="user" ident="Result" result="pass">Positive response [71 01 02 60] received.</teststep>
         <teststep timestamp="  23.978606" level="0" type="user" ident="Result" result="pass">Validation Result: 0x01 Ownership verified, authentication complete.</teststep>
         <teststep timestamp="  24.028606" level="0" type="user" ident="Action" result="pass">Send diagnostic request: &quot;HW Part Number [22 F1 11]&quot;.</teststep>
-        <teststep timestamp="  24.028606" level="0" type="user" ident="Check" result="na">Does DUT send a diagnostic response? Wait for max. 60 s.</teststep>
+        <teststep timestamp="  24.028606" level="0" type="user" ident="Check" result="pass">Does DUT send a diagnostic response? Wait for max. 60 s.</teststep>
         <teststep timestamp="  24.043488" level="0" type="user" ident="Result" result="pass">Diagnostic message positive acknowledge received. Wait for diagnostic message with the requested data.</teststep>
         <teststep timestamp="  24.058582" level="0" type="user" ident="Result" result="pass">Positive response [62 F1 11] received.</teststep>
         <teststep timestamp="  24.058582" level="0" type="user" ident="Result" result="pass">Decoded HW Part Number:\nA 223 901 59 06.</teststep>
@@ -47,7 +47,7 @@
         <teststep timestamp="  24.672582" level="0" type="user" ident="Action" result="pass">Send diagnostic request: &quot;Authenticate Diagnostic User or Tester [31 01 02 60]&quot;.</teststep>
         <teststep timestamp="  24.672582" level="0" type="user" ident="Check" result="pass">Does DUT send a diagnostic response? Wait for max. 60 s.</teststep>
         <teststep timestamp="  24.683352" level="0" type="user" ident="Result" result="pass">Diagnostic message positive acknowledge received. Wait for diagnostic message with the requested data.</teststep>
-        <teststep timestamp="  24.698488" level="0" type="user" ident="Result" result="na">Response received: &quot;Request Correctly Received - Response Pending&quot; [7F 31 78].</teststep>
+        <teststep timestamp="  24.698488" level="0" type="user" ident="Result" result="pass">Response received: &quot;Request Correctly Received - Response Pending&quot; [7F 31 78].</teststep>
         <teststep timestamp="  24.708522" level="0" type="user" ident="Result" result="pass">Positive response [71 01 02 60] received.</teststep>
         <teststep timestamp="  24.708522" level="0" type="user" ident="Result" result="pass">Validation Result: 0x02 De-authentication successful.</teststep>
         <teststep timestamp="  24.709522" level="0" type="user" ident="Action" result="na">Power down DUT: Disabling clamp 30.</teststep>

@@ -1,9 +1,9 @@
-
 import os
 import xml.etree.ElementTree as ET
 import sys
 import shutil
 import random
+import json
 
 try:
     cwd = os.getcwd()
@@ -59,12 +59,6 @@ print (search_fail)
 percentage_success = (length/(length+length_fail))*100
 print ("Success percentage is: ", percentage_success, "%")
 
-# Set environment variables
-#string_perc = str(percentage_success)
-#os.environ['Percentage_of_success'] = string_perc
-#test = os.getenv('Percentage_of_success')
-#print ("!!!!!!!!!!!!!!!!!!!!!!!",test)
-
 #Define a criteria of 60% for success
 if percentage_success >= 60:    
     os.environ['success_factor'] = "true"
@@ -87,4 +81,43 @@ try:
     file.close()
 except:
     print('no file to close')
-#shutil.copyfile("test.txt", "genfile\\test.txt")
+#######################################################
+#Move the tests amount and the tests failed to json objects
+data_set1 = {"key":"TESTSTEPS_AMOUNT", "value1":[length + length_fail]}
+data_set2 = {"key":"TESTSTEPS_FAILED", "value2":[length_fail]}
+json_dump1 = json.dumps(data_set1)
+json_dump2 = json.dumps(data_set2)
+json_object1 = json.loads(json_dump1)
+json_object2 = json.loads(json_dump2)
+#Parse the json object class strings and remove extra characters from prefix and suffix locations
+Test_steps_amount =str(json_object1["value1"])
+Test_STEPS_FAILED =str(json_object2["value2"])
+Test_steps_amount1=Test_steps_amount.removeprefix('[')
+Test_steps_amount_FINAL=Test_steps_amount1.removesuffix(']')
+Test_STEPS_FAILED1=Test_STEPS_FAILED.removeprefix('[')
+Test_STEPS_FAILED_FINAL=Test_STEPS_FAILED1.removesuffix(']')
+#Save the json results in text files .. these will be stashed, unstashed, and saved to local variables in jenkins pipelines world
+try:
+    file = open("output_test.txt", "w")
+except:
+    print('Cannot open the file')
+try:    
+    file.write(Test_steps_amount_FINAL)
+except:
+    print('Cannot write to the file')
+try:
+    file.close()
+except:
+    print('no file to close')
+try:
+    file = open("output_test1.txt", "w")
+except:
+    print('Cannot open the file')
+try:    
+    file.write(Test_STEPS_FAILED_FINAL)
+except:
+    print('Cannot write to the file')
+try:
+    file.close()
+except:
+    print('no file to close')
